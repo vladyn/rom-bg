@@ -1,2 +1,12 @@
-<h1>{{ title }}</h1>
-<p>{{ description }}</p>
+<div class="main-container">
+  <fountain-header></fountain-header>
+  <main class="main">
+    <h1>{{ title }}</h1>
+	<p>{{ description }}</p>
+    <!-- Router Outlet -->
+    <router-outlet></router-outlet>
+  </main>
+  <div class="col-md-6 col-md-6-offset4">
+    <fountain-footer></fountain-footer>
+  </div>
+</div>
