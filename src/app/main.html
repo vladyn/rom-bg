@@ -3,9 +3,13 @@
   <main class="main">
     <fountain-title></fountain-title>
     <fountain-techs></fountain-techs>
-    <!-- Routed views go here -->
-	<router-outlet></router-outlet>
     <some-selector></some-selector>
+    <!-- Router Outlet -->
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
   </main>
-  <fountain-footer></fountain-footer>
+  <div class="col-md-6 col-md-6-offset4">
+    <fountain-footer></fountain-footer>
+  </div>
 </div>
