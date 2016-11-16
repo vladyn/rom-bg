@@ -6,7 +6,7 @@ import {Http} from '@angular/http';
   templateUrl: './body.html'
 })
 export class BodyComponent implements OnInit {
-  texts = [];  // start with an empty array
+  texts: any[] = [];  // start with an empty array
 
   constructor(http: Http) { }  // inject Http here, no need to assign to this
 
@@ -18,5 +18,6 @@ export class BodyComponent implements OnInit {
         console.log(result);  // only log *inside* the callback
         this.texts = result;
       });
+    // outside the callback, the HTTP call hasn't yet finished
   }
 }
