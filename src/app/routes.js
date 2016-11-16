@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {MainComponent} from './main';
-import {SomeComponent} from './some';
+import {BodyComponent} from './body';
 
 @Component({
   selector: 'fountain-root',
@@ -16,7 +16,7 @@ export const routes = [
   },
   {
     path: 'some',
-    component: SomeComponent
+    component: BodyComponent
   }
 ];
 

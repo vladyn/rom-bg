@@ -1,5 +1,5 @@
-import {NgModule, provide} from '@angular/core';
-import {http} from '@angular/http';
+import {NgModule} from '@angular/core';
+// import {http} from '@angular/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {routing, RootComponent} from './routes';
 
@@ -9,16 +9,13 @@ import {MainComponent} from './main';
 import {HeaderComponent} from './header';
 import {TitleComponent} from './title';
 import {FooterComponent} from './footer';
-import {SomeComponent} from './some';
-
-import {TextsModule} from './texts';
+import {BodyComponent} from './body';
 
 @NgModule({
   imports: [
     BrowserModule,
     routing,
-    TechsModule,
-    TextsModule
+    TechsModule
   ],
   declarations: [
     RootComponent,
@@ -26,8 +23,8 @@ import {TextsModule} from './texts';
     HeaderComponent,
     TitleComponent,
     FooterComponent,
-    SomeComponent
+    BodyComponent
   ],
-  bootstrap: [RootComponent, provide(http, {useClass: http})]
+  bootstrap: [RootComponent]
 })
 export class AppModule {}
