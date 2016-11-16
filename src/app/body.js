@@ -1,23 +1,22 @@
-import {Component, Inject} from "@angular/core";
+import {Component, OnInit} from '@angular/core';  // note consistent quotes
 import {Http} from '@angular/http';
 
 @Component({
   selector: 'body-selector',
-  template: require('./body.html')
+  templateUrl: './body.html'
 })
+export class BodyComponent implements OnInit {
+  texts = [];  // start with an empty array
 
-@Inject(Http)
+  constructor(http: Http) { }  // inject Http here, no need to assign to this
 
-export class BodyComponent {
-  constructor(http: Http) {
-    this.http = http;
-    this.getText('app/texts/main.json').subscribe(result => {
-      console.log(result);
-      this.texts = result;
-    });
-    console.log(this.texts);
-  }
-  getText(url) {
-    return this.http.get(url).map(response => response.json());
+  ngOnInit() {
+    this.http
+      .get('app/texts/main.json')
+      .map(response => response.json())
+      .subscribe(result => {
+        console.log(result);  // only log *inside* the callback
+        this.texts = result;
+      });
   }
 }
