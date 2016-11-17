@@ -17,7 +17,16 @@ export const routes = [
   {
     path: 'some',
     component: BodyComponent
+  },
+  {
+    path: 'another',
+    component: BodyComponent
+  },
+  {
+    path: 'yet',
+    component: BodyComponent
   }
+
 ];
 
 export const routing = RouterModule.forRoot(routes);
