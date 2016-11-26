@@ -14,9 +14,12 @@ export class BodyComponent implements OnInit {
   }  // inject Http here, no need to assign to this
 
   ngOnInit() {
-    console.table(this);
+    const currentRoute = this.route.url.toString() === '' ? 'main' : this.route.url;
+    const jsonName = `${currentRoute}.json`;
+    console.log(`current route URL is ${this.route.url}`);
+    console.log(jsonName);
     this.http
-      .get('app/texts/main.json')
+      .get(`app/texts${jsonName}`)
       .map(response => response.json())
       .subscribe(result => {
         this.texts = result;
