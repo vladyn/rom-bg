@@ -77,7 +77,7 @@
   },
   "name": "rom-bg",
   "version": "1.0.0",
-  "description": "simple websote",
+  "description": "simple web app",
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
